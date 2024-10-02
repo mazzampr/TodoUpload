@@ -20,6 +20,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import java.io.File
 import java.net.URI
+import java.util.UUID
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -142,6 +143,23 @@ class RemoteDataSource(
         }
         .addOnSuccessListener {
           trySend(NetworkResponse.Success("Status berhasil diubah"))
+        }
+      awaitClose()
+    }
+
+  fun updateProfilePic(user: UserModel, file: File) : Flow<NetworkResponse<String>> =
+    callbackFlow {
+      val docByteArray = file.readBytes()
+      val imageStorage = storage.reference.child("user/${auth.uid}/profile_pic/${UUID.randomUUID()}")
+      val result = imageStorage.putBytes(docByteArray).await()
+      val downloadUrl = result.storage.downloadUrl.await().toString()
+      firestore.collection(USER_COLLECTION).document(auth.uid!!)
+        .set(user.copy(profilePic = downloadUrl))
+        .addOnFailureListener {
+          trySend(NetworkResponse.Error("Terjadi kesalahan"))
+        }
+        .addOnSuccessListener {
+          trySend(NetworkResponse.Success("Photo profile berhasil diubah"))
         }
       awaitClose()
     }

@@ -48,12 +48,14 @@
 
         <TextView
             android:id="@+id/tv_change_profile"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/change_photo_profile"
             android:textColor="@color/primaryColor"
             android:textAlignment="center"
-            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="@id/ivProfil"
+            app:layout_constraintEnd_toEndOf="@id/ivProfil"
             app:layout_constraintTop_toBottomOf="@id/ivProfil"
             />
 
