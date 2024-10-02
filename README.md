@@ -15,8 +15,9 @@ TodoUpload app is an Android application that can manage your todo task with pos
 # Overview
 1. Kotlin
 2. MVVM with Repository
-3. Modularization
-4. Koin Injection
-5. Navigation Components
-6. Firebase Auth, Firestore, and storage
-7. Exoplayer to play and edit video
+3. Post Notifications
+4. Modularization
+5. Koin Injection
+6. Navigation Components
+7. Firebase Auth, Firestore, and storage
+8. Exoplayer to play and edit video
