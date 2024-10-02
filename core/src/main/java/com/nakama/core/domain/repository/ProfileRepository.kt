@@ -1,0 +1,9 @@
+package com.nakama.core.domain.repository
+
+import com.nakama.core.data.model.Resource
+import com.nakama.core.data.model.UserModel
+import kotlinx.coroutines.flow.Flow
+
+interface ProfileRepository {
+  fun getUserData(): Flow<Resource<UserModel>>
+}
