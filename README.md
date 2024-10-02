@@ -1,6 +1,9 @@
 # Demo App
 [Watch a demo app](https://drive.google.com/file/d/1BaUsnwjjyl9Mw6xJ9Tx0vMsxGTIVlqaJ/view?usp=sharing)
 
+# App Debug Dwonload
+[Dwonload App Debug](https://drive.google.com/file/d/1NLo-RWKatdU6BTxi9wtdIhcwjrCi1GTN/view?usp=sharing)
+
 # TodoUpload Android App
 TodoUpload app is an Android application that can manage your todo task with post notifications and media player using Exoplayer library
 
